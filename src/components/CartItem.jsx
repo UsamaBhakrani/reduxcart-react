@@ -1,4 +1,6 @@
-const CartItem = () => {
+import { ChevronDown, ChevronUp } from "../Icons";
+
+const CartItem = ({ item }) => {
   return <div>CartItem</div>;
 };
 
