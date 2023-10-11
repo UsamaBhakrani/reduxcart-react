@@ -1,10 +1,10 @@
 import { useDispatch, useSelector } from "react-redux";
-import CartItems from "./CartItems";
 import { ChevronUp, ChevronDown } from "./Icons";
 import { increase, decrease } from "./slice/cartSlice";
+import CartItems from "./CartItems";
 
 const App = () => {
-  const Cart = useSelector((state) => state.cart);
+  const cart = useSelector((state) => state.cart )
   const dispatch = useDispatch();
 
   return (

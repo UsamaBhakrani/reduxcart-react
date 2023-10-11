@@ -5,13 +5,7 @@ export const cartSlice = createSlice({
   name: "cart",
   initialState: CartItems,
   reducers: {
-    increase: (state, action) => {
-      const newState = state.map((s) => {
-        if (s.id === action.payload) {
-          return s.amount + 1;
-        }
-      })
-    },
+    increase: (state, action) => {},
     decrease: (state, action) => {},
   },
 });
