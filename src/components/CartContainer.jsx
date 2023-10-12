@@ -17,10 +17,10 @@ const CartContainer = () => {
     );
   }
   return (
-    <section>
+    <section className="cart">
       <header>
         <h2>Your Bag</h2>
-        <div>
+        <div className="cart">
           {cartItems.map((item) => {
             return <CartItem key={item.id} {...item} />;
           })}
