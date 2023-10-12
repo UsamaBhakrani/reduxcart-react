@@ -10,10 +10,29 @@ export const cartSlice = createSlice({
     isLoading: true,
   },
   reducers: {
-    increaseAmount: (state, action) => {},
-    decreaseAmount: (state, action) => {},
+    increaseAmount: (state, action) => {
+      const cartItem = state.cartItems.find(
+        (item) => item.id === action.payload
+      );
+      cartItem.amount = cartItem.amount + 1;
+    },
+    decreaseAmount: (state, action) => {
+      const cartItem = state.cartItems.find(
+        (item) => item.id === action.payload
+      );
+      cartItem.amount = cartItem.amount - 1;
+    },
+    clearCart: (state, action) => {
+      state.cartItems = [];
+    },
+    removeItem: (state, action) => {
+      state.cartItems = state.cartItems.filter(
+        (item) => item.id !== action.payload
+      );
+    },
   },
 });
 
-export const { increaseAmount, decreaseAmount } = cartSlice.actions;
+export const { increaseAmount, decreaseAmount, clearCart, removeItem } =
+  cartSlice.actions;
 export default cartSlice.reducer;
