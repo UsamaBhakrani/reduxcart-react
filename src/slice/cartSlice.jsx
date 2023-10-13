@@ -4,8 +4,8 @@ import cartItems from "../cartItems";
 export const cartSlice = createSlice({
   name: "cart",
   initialState: {
-    cartItems: cartItems,
-    amount: 2,
+    cartItems,
+    amount: 1,
     total: 0,
     isLoading: true,
   },
