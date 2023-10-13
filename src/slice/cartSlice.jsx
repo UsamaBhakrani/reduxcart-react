@@ -5,7 +5,7 @@ export const cartSlice = createSlice({
   name: "cart",
   initialState: {
     cartItems,
-    amount: 1,
+    amount: 2,
     total: 0,
     isLoading: true,
   },
