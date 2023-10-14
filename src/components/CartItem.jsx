@@ -29,7 +29,7 @@ const CartItem = ({ id, img, title, price, amount }) => {
             dispatch(decreaseAmount(id));
           }}
         >
-          <ChevronDown />
+          <ChevronDown color={amount <= 1 ? "grey" : "currentColor"} />
         </button>
       </div>
     </article>
