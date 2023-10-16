@@ -49,6 +49,18 @@ export const cartSlice = createSlice({
       state.total = total.toFixed(2);
     },
   },
+  extraReducers: (builder) => {
+    builder.addCase(getCartItems.pending, (state) => {
+      state.isLoading = true;
+    });
+    builder.addCase(getCartItems.fulfilled, (state, action) => {
+      state.cartItems = action.payload;
+      state.isLoading = false;
+    });
+    builder.addCase(getCartItems.rejected, (state) => {
+      state.isLoading = false;
+    });
+  },
 });
 
 export const {
@@ -58,4 +70,5 @@ export const {
   removeItem,
   calculateTotals,
 } = cartSlice.actions;
+
 export default cartSlice.reducer;
