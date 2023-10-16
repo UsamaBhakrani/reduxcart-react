@@ -3,8 +3,8 @@ import cartItems from "../cartItems";
 
 const url = "https://course-api.com/react-useReducer-cart-project";
 
-export const getCartItems = createAsyncThunk("/cart/getCartItems", () => {
-  return fetch(url)
+export const getCartItems = createAsyncThunk("/cart/getCartItems", async () => {
+  return await fetch(url)
     .then((res) => res.json())
     .catch((err) => console.log(err));
 });
@@ -12,7 +12,7 @@ export const getCartItems = createAsyncThunk("/cart/getCartItems", () => {
 export const cartSlice = createSlice({
   name: "cart",
   initialState: {
-    cartItems,
+    cartItems: [],
     amount: 1,
     total: 0,
     isLoading: true,
